@@ -4,10 +4,12 @@ import { Observable, asyncScheduler } from "rxjs";
 
 
 @Injectable({providedIn: 'root'})
-export class VtuberApiService{
+export class JikanApiService{
     constructor(private http: HttpClient){}
-    getSeries(title?:string): Observable<any>{
-        const url = ``;
+    
+    getAnime(title?:string): Observable<any>{
+        // const url = `https://api.jikan.moe/v4/anime?q=${title}&sfw`;
+        const url = `https://api.jikan.moe/v4/anime?q=Naruto&sfw`;
         return this.http.get(url);
     }
 }

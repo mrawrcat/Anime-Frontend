@@ -1,32 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { VtuberApiService } from '../vtuber-api.service';
-
+import { JikanApiService } from '../jikan-api.service';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
-export class InputComponent {
-  // constructor(private vtuberApiService: VtuberApiService){}
-  // selectedImage: any;
-
-  // getTestInit(){
-  //   const Gura = "Gawr Gura";
-  //   this.vtuberApiService.getVtuber(Gura).subscribe(
-  //     (data: any)=>{
-  //       this.selectedImage = data;
-  //     },
-  //     (error:any) => {
-  //       console.error(error);
-  //     }
-  //   )
-  //   console.log('test console log 1');
-  //   console.log(this.selectedImage);
-  // }
-
-  // ngOnInit(): void {
-  //   this.getTestInit();
-  //   console.log('test console log 2');
-  // }
+export class InputComponent implements OnInit {
+  constructor(private jikanApiService: JikanApiService){}
+  getTestInit(){
+    const testTitle = "Naruto";
+    this.jikanApiService.getAnime(testTitle).subscribe(
+      (data: any)=>{
+      },
+      (error:any) => {
+        console.error(error);
+      }
+    )
+    console.log("animeTitle: ");
+  } 
+  ngOnInit(): void {
+    this.getTestInit();
+  }
 }
