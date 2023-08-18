@@ -3,3 +3,10 @@
     <mat-label>Search for an anime!</mat-label>
     <input matInput placeholder="Ex. Naruto" value="One Piece">
   </mat-form-field>
+
+  <app-image-view/>
+
+  <mat-card>
+    {{ anime_query.data[0].images.jpg.image_url | json }}
+  </mat-card>
+ 

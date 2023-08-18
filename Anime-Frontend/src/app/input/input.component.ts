@@ -8,17 +8,26 @@ import { JikanApiService } from '../jikan-api.service';
 })
 export class InputComponent implements OnInit {
   constructor(private jikanApiService: JikanApiService){}
+  img_url: any;
+  anime_query: any;
+  myData$: any;
   getTestInit(){
     const testTitle = "Naruto";
     this.jikanApiService.getAnime(testTitle).subscribe(
       (data: any)=>{
+        this.anime_query = data;
+        console.log("anime_query: ", this.anime_query);
       },
       (error:any) => {
         console.error(error);
       }
     )
-    console.log("animeTitle: ");
   } 
+
+  getAnimeQuery(){
+    this.myData$ = this.jikanApiService.getAnime("naruto");
+  }
+
   ngOnInit(): void {
     this.getTestInit();
   }
