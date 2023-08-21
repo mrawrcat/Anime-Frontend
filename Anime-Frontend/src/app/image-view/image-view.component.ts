@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./image-view.component.css']
 })
 export class ImageViewComponent {
-  // @Input() imageSrc: string;
+  @Input() imageSrc: string;
   // @Input() imageAlt: string;
   // @Input() imageDescription: string;
 }

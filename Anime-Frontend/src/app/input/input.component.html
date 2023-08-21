@@ -1,12 +1,39 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Search for an anime!</mat-label>
-    <input matInput placeholder="Ex. Naruto" value="One Piece">
+    <input matInput placeholder="Ex. Naruto" [(ngModel)]="anime_input" name="animename">
   </mat-form-field>
+  <p>You entered: {{anime_input}}</p>
+  <button mat-raised-button color="primary" (click)="getAnime()">Get Anime!</button>
 
-  <app-image-view/>
+  
 
+  <!-- <mat-card>
+  <app-image-view
+  *ngFor="let item of anime_query.data"
+  [imageSrc] = "item.images.jpg.image_url"
+  />
+  </mat-card> -->
+  
   <mat-card>
+  <ul>
+    <li *ngFor="let item of anime_query.data">
+      {{item.images.jpg.image_url | json}}
+    </li>
+  </ul>
+  </mat-card>
+
+  <!-- <mat-card>
     {{ anime_query.data[0].images.jpg.image_url | json }}
   </mat-card>
+
+  <mat-card>
+    {{ anime_query.data | json }}
+  </mat-card> -->
+
+  <ng-container *ngIf="anime_query">
+    <app-image-view  *ngFor="let item of anime_query.data"
+    [imageSrc] = "item.images.jpg.image_url"
+    />
+  </ng-container>
  

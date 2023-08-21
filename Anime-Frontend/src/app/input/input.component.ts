@@ -7,13 +7,14 @@ import { JikanApiService } from '../jikan-api.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  constructor(private jikanApiService: JikanApiService){}
-  img_url: any;
+  anime_input: string;
   anime_query: any;
-  myData$: any;
-  getTestInit(){
-    const testTitle = "Naruto";
-    this.jikanApiService.getAnime(testTitle).subscribe(
+
+  constructor(private jikanApiService: JikanApiService){}
+
+  getAnime(){
+    console.log("anime input string: ", this.anime_input, this.anime_input.toString());
+    this.jikanApiService.getAnime(this.anime_input).subscribe(
       (data: any)=>{
         this.anime_query = data;
         console.log("anime_query: ", this.anime_query);
@@ -22,11 +23,20 @@ export class InputComponent implements OnInit {
         console.error(error);
       }
     )
-  } 
-
-  getAnimeQuery(){
-    this.myData$ = this.jikanApiService.getAnime("naruto");
   }
+  getTestInit(){
+    const testTitle = "Naruto";
+    this.jikanApiService.getAnime(testTitle).subscribe(
+      (data: any)=>{
+        this.anime_query = data;
+        console.log("anime_query: ", this.anime_query);
+        console.log("test first query: ", this.anime_query.data[0]);
+      },
+      (error:any) => {
+        console.error(error);
+      }
+    )
+  } 
 
   ngOnInit(): void {
     this.getTestInit();

@@ -8,8 +8,7 @@ export class JikanApiService{
     constructor(private http: HttpClient){}
     
     getAnime(title?:string): Observable<any>{
-        // const url = `https://api.jikan.moe/v4/anime?q=${title}&sfw`;
-        const url = `https://api.jikan.moe/v4/anime?q=Naruto&sfw`;
+        const url = `https://api.jikan.moe/v4/anime?q=${title}&sfw`;
         return this.http.get(url);
     }
 }
