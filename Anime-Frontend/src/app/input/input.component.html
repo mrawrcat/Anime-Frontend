@@ -31,9 +31,29 @@
     {{ anime_query.data | json }}
   </mat-card> -->
 
-  <ng-container *ngIf="anime_query">
+  <!-- <ng-container *ngIf="anime_query">
     <app-image-view  *ngFor="let item of anime_query.data"
     [imageSrc] = "item.images.jpg.image_url"
     />
+  </ng-container> -->
+
+  <mat-grid-list cols="5" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let item of anime_query.data">
+      <button>
+        <app-image-view [imageSrc] = "item.images.jpg.image_url"/>
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <!-- <mat-card>
+  <ng-container *ngIf="anime_query">
+    <mat-card>
+    <button mat-button  *ngFor="let item of anime_query.data">
+      <mat-card>
+      <app-image-view [imageSrc] = "item.images.jpg.image_url"/>
+    </mat-card>
+  </button>
+</mat-card>
   </ng-container>
+</mat-card> -->
  
