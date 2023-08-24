@@ -5,23 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CardComponent } from './card/card.component';
 import { InputComponent } from './input/input.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+
 import { ImageViewComponent } from './image-view/image-view.component';
 
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { AnimeComponent } from './anime/anime.component';
+import { HomeComponent } from './home/home.component';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {NgIf} from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     InputComponent,
-    SidenavComponent,
-    ImageViewComponent
+    ImageViewComponent,
+    AnimeDetailComponent,
+    AnimeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

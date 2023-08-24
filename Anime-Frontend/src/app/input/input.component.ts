@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { JikanApiService } from '../jikan-api.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { JikanApiService } from '../jikan-api.service';
 export class InputComponent implements OnInit {
   anime_input: string;
   anime_query: any;
-
+  columns: number = 2;
+  click_item: string;
+  @ViewChild('box', {static: true}) box: ElementRef;
   constructor(private jikanApiService: JikanApiService){}
 
   getAnime(){
@@ -38,7 +40,18 @@ export class InputComponent implements OnInit {
     )
   } 
 
+  setColumns() {
+    this.columns = Math.floor(this.box.nativeElement.clientWidth / 250);
+  }
+
+  displaystuff(){
+    console.log("clicked button");
+    console.log()
+
+  }
+
   ngOnInit(): void {
     this.getTestInit();
+    this.setColumns();
   }
 }
