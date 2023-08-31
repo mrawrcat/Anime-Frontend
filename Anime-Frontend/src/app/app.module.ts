@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { AnimeComponent } from './anime/anime.component';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {NgIf} from '@angular/common';
 @NgModule({
@@ -33,6 +34,11 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule, 
     MaterialModule,
+    RouterModule.forRoot([
+      {path: 'home', component: HomeComponent},
+      {path: 'anime-detail', component: AnimeDetailComponent},
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

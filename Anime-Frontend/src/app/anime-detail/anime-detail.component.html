@@ -1,1 +1,18 @@
-<p>anime-detail works!</p>
+<a class="button" routerLink="/home">Go to home</a>
+<mat-card>
+    <h1>{{anime_query.data[0].title}}</h1>
+    <app-image-view 
+          [imageSrc] = "anime_query.data[0].images.jpg.image_url"
+          [imageAlt] = "anime_query.data[0].title"
+          />
+</mat-card>
+
+<mat-card>
+    <h1>Synopsis:</h1>
+    <p>{{anime_query.data[0].synopsis}}</p>
+</mat-card>
+
+<mat-card>
+    <h1>Background:</h1>
+    <p>{{anime_query.data[0].background}}</p>
+    </mat-card>

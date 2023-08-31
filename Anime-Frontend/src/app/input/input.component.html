@@ -18,7 +18,8 @@
   <mat-card>
   <ul>
     <li *ngFor="let item of anime_query.data">
-      {{item.images.jpg.image_url | json}}
+      <!-- {{item.images.jpg.image_url | json}} -->
+      <a [routerLink]="['/anime-detail']" routerLinkActive="activebutton">{{item.images.jpg.image_url | json}}</a>
     </li>
   </ul>
   </mat-card>
@@ -40,7 +41,7 @@
 <div id="box" #box>
   <mat-grid-list [cols]="columns" (window:resize)="setColumns()" rowHeight="1:1.1" width="100%">
     <mat-grid-tile *ngFor="let item of anime_query.data" style="width: 100px;">
-      <button  (click)="displaystuff()" >
+      <button routerLink="/anime-detail">
         <app-image-view 
           [imageSrc] = "item.images.jpg.image_url"
           [imageAlt] = "item.title"
