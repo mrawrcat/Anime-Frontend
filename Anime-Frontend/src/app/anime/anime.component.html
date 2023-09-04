@@ -1,5 +1,27 @@
-<p>anime works!</p>
-<!-- <app-image-view 
-          [imageSrc] = "anime_query.data[0].images.jpg.image_url"
-          [imageAlt] = "anime_query.data[0].title"
-          /> -->
+<!-- 
+    <mat-card>
+    <ul>
+      <li *ngFor="let item of anime_init.data">
+        <a [routerLink]="['/anime-detail']" routerLinkActive="activebutton">
+            <app-image-view 
+          [imageSrc] = "item.images.jpg.image_url"
+          [imageAlt] = "item.title"
+          />
+            {{item.images.jpg.image_url | json}}
+        </a>
+      </li>
+    </ul>
+    </mat-card> 
+-->
+<!-- <a [routerLink]="['/anime-detail']" routerLinkActive="activebutton">
+    <app-image-view 
+  [imageSrc] = "item.images.jpg.image_url"
+  [imageAlt] = "item.title"
+  />
+    {{item.images.jpg.image_url | json}}
+</a> -->
+<app-image-view
+[imageSrc]="animeImage"
+[imageAlt]="animeTitle"
+/>
+<p>{{animeTitle}}</p>

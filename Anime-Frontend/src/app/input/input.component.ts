@@ -38,7 +38,20 @@ export class InputComponent implements OnInit {
         console.error(error);
       }
     )
-  } 
+  }
+
+  testStateInit(){
+    const testTitle = "Naruto";
+    this.jikanApiService.getAnimeData(testTitle).subscribe(
+      (data: any)=>{
+        this.anime_query = data;
+        console.log('storage data: ', this.jikanApiService.state_storage);
+      },
+      (error:any) => {
+        console.error(error);
+      }
+    )
+  }
 
   setColumns() {
     this.columns = Math.floor(this.box.nativeElement.clientWidth / 250);
@@ -46,12 +59,13 @@ export class InputComponent implements OnInit {
 
   displaystuff(){
     console.log("clicked button");
-    console.log()
+    
 
   }
 
   ngOnInit(): void {
     this.getTestInit();
+    this.testStateInit();
     this.setColumns();
   }
 }

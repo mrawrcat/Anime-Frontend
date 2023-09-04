@@ -1,3 +1,11 @@
 <!-- <a [routerLink]="['home']" >home works!</a> -->
+<!-- <app-anime/> -->
+<mat-card>
+    <div id="box" #box>
+          <button *ngFor="let item of anime_sorted; let i=index" >
+            <app-anime [attr.id]="i" [testanimedata]="item.images.jpg.image_url"
+                [animeImage]="item.images.jpg.image_url" [animeTitle]="item.title" />
+          </button>
+    </div>
+    </mat-card>
 <!-- <app-input/> -->
-<app-input/>
