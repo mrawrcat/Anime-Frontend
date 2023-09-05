@@ -1,11 +1,13 @@
 import { Injectable, Output } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable, asyncScheduler } from "rxjs";
+import { BehaviorSubject, Observable, asyncScheduler } from "rxjs";
 
 
 @Injectable({providedIn: 'root'})
 export class JikanApiService{
-    state_storage: any;
+    state_storage: any = undefined;
+    private animeData = new BehaviorSubject({});
+    currentAnimeData = this.animeData.asObservable();
 
     constructor(private http: HttpClient){}
     
@@ -17,5 +19,9 @@ export class JikanApiService{
     getAnimeData(title?: string): Observable<any>{
         // this.state_storage = this.getAnime(title);
         return this.getAnime(title);
+    }
+
+    changeAnimeData(data: any){
+        this.animeData.next(data);
     }
 }
