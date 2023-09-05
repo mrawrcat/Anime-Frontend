@@ -1,8 +1,17 @@
 <a class="button" routerLink="/home">Go to home</a>
 <mat-card>
+<app-image-view 
+[imageSrc] = "animeData.images.jpg.image_url"
+[imageAlt] = "animeData.title"
+/>
+<h1>{{animeData.title}}</h1>
+<h2>Synopsis:</h2>
+<p>{{animeData.synopsis}}</p>
+</mat-card>
+<!-- <mat-card>
     <h1>{{anime_query.data[0].title}}</h1>
     <app-image-view 
-          [imageSrc] = "anime_query.data[0].images.jpg.image_url"
+          [imageSrc] = "animeImage"
           [imageAlt] = "anime_query.data[0].title"
           />
 </mat-card>
@@ -15,4 +24,4 @@
 <mat-card>
     <h1>Background:</h1>
     <p>{{anime_query.data[0].background}}</p>
-    </mat-card>
+    </mat-card> -->
