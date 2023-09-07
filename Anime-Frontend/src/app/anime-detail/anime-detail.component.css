@@ -22,8 +22,6 @@ app-image-view {
     align-self: center;
 }
 
-a {
-    padding-left: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+button {
+    margin-bottom: 50px;
 }

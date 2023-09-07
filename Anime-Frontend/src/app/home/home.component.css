@@ -10,6 +10,7 @@ div {
     /* margin: auto;
     align-items: center; */
     justify-content: center;
+    word-wrap: break-word;
 }
 
 .example-form {
@@ -20,6 +21,14 @@ div {
     word-wrap: break-word;
 }
 
+.enter-input {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+}
+
 p {
+    padding: 5px;
     word-wrap: break-word;
 }
