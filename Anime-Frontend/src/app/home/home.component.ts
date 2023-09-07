@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
   constructor(private route: Router, private jikanApiService: JikanApiService ){}
 
     getAnime(){
-      console.log("anime input string: ", this.anime_input, this.anime_input.toString());
+      console.log("anime input string: ", this.anime_input);
       this.jikanApiService.getAnime(this.anime_input).subscribe(
         (data: any)=>{
           this.anime_query = data;
@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit{
           console.log("test first query: ", this.anime_query.data[0]);
           this.anime_sorted = this.anime_query.data;
           console.log("anime_sorted: ", this.anime_sorted);
+          this.jikanApiService.changeCurrentSearchTerm(this.anime_input);
+          console.log(this.jikanApiService.getCurrentSearchTerm());
         },
         (error:any) => {
           console.error(error);
@@ -36,8 +38,13 @@ export class HomeComponent implements OnInit{
       )
     }
 
-    getTestInit(){
-      const testTitle = "Naruto";
+    getTestInit(){ 
+      console.log("init search: ", this.jikanApiService.getCurrentSearchTerm());
+      let testTitle = "Naruto";
+      if(this.jikanApiService.getCurrentSearchTerm() != undefined){
+        testTitle = this.jikanApiService.getCurrentSearchTerm();
+      }
+      console.log("init input string: anime: ", this.anime_input, " search: ", this.search_input);
       this.jikanApiService.getAnime(testTitle).subscribe(
         (data: any)=>{
           this.anime_query = data;

@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class AnimeDetailComponent implements OnInit {
   animeDataSubscription: Subscription;
   animeData: any;
+  
   route: ActivatedRoute = inject(ActivatedRoute);
   constructor(private jikanApiService: JikanApiService) { }
 

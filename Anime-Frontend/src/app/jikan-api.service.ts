@@ -5,11 +5,10 @@ import { BehaviorSubject, Observable, asyncScheduler } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class JikanApiService{
-    // private searchterm = new BehaviorSubject([]);
-    // currentSearchTerm = this.searchterm.asObservable();
+    searchTerm: string;
     private animeData = new BehaviorSubject({});
     currentAnimeData = this.animeData.asObservable();
-
+    
     constructor(private http: HttpClient){}
     
     getAnime(title?:string): Observable<any>{
@@ -24,12 +23,12 @@ export class JikanApiService{
     changeAnimeData(data: any){
         this.animeData.next(data);
     }
-
-    // getSearchTerm(): Observable<any>{
-    //     return this.searchterm;
-    // }
     
-    // changeSearchTerm(data: any){
-    //     this.searchterm.next(data);
-    // }
+    changeCurrentSearchTerm(data: string){
+        this.searchTerm = data;
+    }
+
+    getCurrentSearchTerm(){
+        return this.searchTerm;
+    }
 }
