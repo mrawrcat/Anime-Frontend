@@ -1,6 +1,6 @@
 FROM node:18
-COPY . /app
-WORKDIR /app
+COPY . /src
+WORKDIR /src
 RUN npm install
 EXPOSE 3000
 CMD [ "npm", "start" ]
