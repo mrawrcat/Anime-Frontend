@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit{
   anime_input: string;
   anime_query: any;
   anime_sorted: any;
-  columns: number = 2;
-  @ViewChild('box', {static: true}) box: ElementRef;
+  animeSearchSubscription: Subscription;
+  search_input: string;
+  // columns: number = 2;
+  // @ViewChild('box', {static: true}) box: ElementRef;
 
 
   constructor(private route: Router, private jikanApiService: JikanApiService ){}
@@ -49,17 +51,22 @@ export class HomeComponent implements OnInit{
         }
       )
     }
-    setColumns() {
-      this.columns = Math.floor(this.box.nativeElement.clientWidth / 250);
-    }
+
+    // setColumns() {
+    //   this.columns = Math.floor(this.box.nativeElement.clientWidth / 250);
+    // }
 
     changeAnimeData(i: number){
       this.jikanApiService.changeAnimeData(this.anime_sorted[i]);
     }
 
+    // changeSearchTerm(){
+    //   this.jikanApiService.changeSearchTerm(this.anime_input);
+    // }
+
     ngOnInit(): void {
       this.getTestInit();
-
+      // this.setColumns();
     }
 
     // ngOnDestroy(){

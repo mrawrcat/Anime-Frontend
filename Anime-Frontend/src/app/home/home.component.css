@@ -1,0 +1,20 @@
+.animeboxes {
+    width: 300px;
+    height: 400px;
+    display: flexbox;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: auto;
+    align-items: center; */
+    justify-content: center;
+}
+
+.example-form {
+    padding-left: 50px;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+}

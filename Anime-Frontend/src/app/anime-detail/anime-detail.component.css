@@ -1,0 +1,29 @@
+h1 {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+h2 {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+p {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+app-image-view {
+    padding-left: 50px;
+    padding-right: 50px;
+    align-self: center;
+}
+
+a {
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

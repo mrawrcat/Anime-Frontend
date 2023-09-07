@@ -5,7 +5,8 @@ import { BehaviorSubject, Observable, asyncScheduler } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class JikanApiService{
-    state_storage: any = undefined;
+    // private searchterm = new BehaviorSubject([]);
+    // currentSearchTerm = this.searchterm.asObservable();
     private animeData = new BehaviorSubject({});
     currentAnimeData = this.animeData.asObservable();
 
@@ -17,11 +18,18 @@ export class JikanApiService{
     }
 
     getAnimeData(title?: string): Observable<any>{
-        // this.state_storage = this.getAnime(title);
         return this.getAnime(title);
     }
 
     changeAnimeData(data: any){
         this.animeData.next(data);
     }
+
+    // getSearchTerm(): Observable<any>{
+    //     return this.searchterm;
+    // }
+    
+    // changeSearchTerm(data: any){
+    //     this.searchterm.next(data);
+    // }
 }
