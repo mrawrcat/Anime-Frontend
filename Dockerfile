@@ -1,6 +1,8 @@
-FROM node:18
-COPY . /src
-WORKDIR /src
+FROM node:16-alpine AS build
+WORKDIR /app
+COPY package*.json ./
 RUN npm install
-EXPOSE 3000
-CMD [ "npm", "start" ]
+COPY . .
+RUN npm run build
+EXPOSE 4200
+CMD ["npm", "start"]
