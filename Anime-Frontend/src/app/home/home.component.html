@@ -7,9 +7,12 @@
         <input matInput placeholder="Ex. Naruto" [(ngModel)]="anime_input" name="animename">
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="getAnime()">Get Anime!</button>
-    <p>You entered: {{anime_input}}</p>
+   
 </form>
 </header>
+<mat-card>
+    <p>You entered: {{anime_input}}</p>
+</mat-card>
 
     <mat-card>
         <div id="box" #box>
