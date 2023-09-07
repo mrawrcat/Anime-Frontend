@@ -1,5 +1,5 @@
 FROM node:16-alpine AS build
-WORKDIR /app
+WORKDIR /Anime-Frontend
 COPY package*.json ./
 RUN npm install
 COPY . .
