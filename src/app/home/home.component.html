@@ -1,0 +1,25 @@
+<!-- <a [routerLink]="['home']" >home works!</a> -->
+<!-- <app-anime/> -->
+<header>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Search for an anime!</mat-label>
+        <input matInput placeholder="Ex. Naruto" [(ngModel)]="anime_input" name="animename">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="getAnime()">Get Anime!</button>
+   
+</form>
+</header>
+<mat-card class="enter-input">
+    <p>You entered: {{anime_input}}</p>
+</mat-card>
+
+    <mat-card>
+        <div id="box" #box>
+            <button class="animeboxes" *ngFor="let item of anime_sorted; let i=index" (click)="changeAnimeData(i)" [routerLink]="['/anime-detail']"
+                routerLinkActive="activebutton" >
+                <app-anime [attr.id]="i" [animeImage]="item.images.jpg.image_url" [animeTitle]="item.title" />
+            </button>
+        </div>
+    </mat-card>
+    <!-- <app-input/> -->

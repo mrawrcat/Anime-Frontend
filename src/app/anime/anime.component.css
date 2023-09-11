@@ -1,0 +1,19 @@
+button {
+    width: 100%;
+    table-layout: fixed;
+    display: flex;
+    /* word-wrap: break-word; */
+    text-align: center;
+    margin: 5px;
+}
+
+p {
+   /* inline-size: min-content; */
+   /* inline-size: 200px; */
+   word-wrap: break-word;
+   text-align: center;
+}
+
+app-image-view {
+    padding: 5px;
+}
