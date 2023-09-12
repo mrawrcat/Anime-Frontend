@@ -5,23 +5,40 @@
 </header>
 
 <mat-card>
-<app-image-view 
-[imageSrc] = "animeData.images.jpg.image_url"
-[imageAlt] = "animeData.title"
-/>
-<h1>{{animeData.title}}</h1>
-<h2>Synopsis:</h2>
-<p>{{animeData.synopsis}}</p>
-<h2>Background:</h2>
-<p>{{animeData.background}}</p>
-<h2>Aired from:</h2>
-<p>{{animeData.aired.prop.from.year}} to {{animeData.aired.prop.to.year}}</p>
-<h2>Score:</h2>
-<p>{{animeData.score}}</p>
-<h2>Rating:</h2>
-<p>{{animeData.rating}}</p>
-<h2>Studio:</h2>
-<p>{{animeData.studios[0].name}}</p>
-<h2>Status:</h2>
-<p>{{animeData.status}}</p>
+    <div class="full-divider">
+        <mat-card>
+            <app-image-view [imageSrc]="animeData.images.jpg.image_url" [imageAlt]="animeData.title" />
+        </mat-card>
+        <mat-card>
+            <h1>{{animeData.title}}</h1>
+        </mat-card>
+        <mat-card>
+            <h2>Synopsis:</h2>
+            <p>{{animeData.synopsis}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Background:</h2>
+            <p>{{animeData.background}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Aired from:</h2>
+            <p>{{animeData.aired.prop.from.year}} to {{animeData.aired.prop.to.year}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Score:</h2>
+            <p>{{animeData.score}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Rating:</h2>
+            <p>{{animeData.rating}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Studio:</h2>
+            <p>{{animeData.studios[0].name}}</p>
+        </mat-card>
+        <mat-card>
+            <h2>Status:</h2>
+            <p>{{animeData.status}}</p>
+        </mat-card>
+    </div>
 </mat-card>

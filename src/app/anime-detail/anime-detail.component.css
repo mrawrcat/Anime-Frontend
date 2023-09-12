@@ -17,11 +17,14 @@ p {
 }
 
 app-image-view {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px;
     align-self: center;
 }
 
 button {
     margin-bottom: 50px;
+}
+
+.full-divider {
+    padding: 50px;
 }
