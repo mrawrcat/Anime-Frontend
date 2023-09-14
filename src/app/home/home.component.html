@@ -1,25 +1,42 @@
 <!-- <a [routerLink]="['home']" >home works!</a> -->
 <!-- <app-anime/> -->
-<header>
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <mat-label>Search for an anime!</mat-label>
-        <input matInput placeholder="Ex. Naruto" [(ngModel)]="anime_input" name="animename">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="getAnime()">Get Anime!</button>
-   
-</form>
-</header>
-<mat-card class="enter-input">
-    <p>You entered: {{anime_input}}</p>
-</mat-card>
+<div class="mat-app-background">
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <span class="title-text">Anime Finder App</span>
+        <span class="example-spacer"></span>
+        <!-- <mat-slide-toggle></mat-slide-toggle> -->
+        <button mat-icon-button class="light-dark-mode" aria-label="light-dark mode icon">
+            <mat-icon>settings</mat-icon>
+        </button>
+        
+    </mat-toolbar-row>
 
-    <mat-card>
-        <div id="box" #box>
-            <button class="animeboxes" *ngFor="let item of anime_sorted; let i=index" (click)="changeAnimeData(i)" [routerLink]="['/anime-detail']"
-                routerLinkActive="activebutton" >
-                <app-anime [attr.id]="i" [animeImage]="item.images.jpg.image_url" [animeTitle]="item.title" />
-            </button>
-        </div>
-    </mat-card>
-    <!-- <app-input/> -->
+    <mat-toolbar-row class="second-row-form">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Search for an anime!</mat-label>
+                <input matInput placeholder="Ex. Naruto" [(ngModel)]="anime_input" name="animename">
+            </mat-form-field>
+            <button mat-raised-button color="red" (click)="getAnime()">Get Anime!</button>
+        </form>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <mat-card class="enter-input">
+    <p>You entered: {{anime_input}}</p>
+</mat-card> -->
+<mat-card class="darkMode">
+    <div>
+        <button class="animeboxes darkMode" *ngFor="let item of anime_sorted; let i=index" (click)="changeAnimeData(i)"
+            [routerLink]="['/anime-detail']" routerLinkActive="activebutton">
+            <app-anime [attr.id]="i" [animeImage]="item.images.jpg.image_url" [animeTitle]="item.title" />
+        </button>
+    </div>
+</mat-card>
+</div>
+<!-- <app-input/> -->

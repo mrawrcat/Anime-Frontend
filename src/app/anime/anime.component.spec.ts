@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnimeComponent } from './anime.component';
+import { MaterialModule } from '../material/material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImageViewComponent } from '../image-view/image-view.component';
 
 describe('AnimeComponent', () => {
   let component: AnimeComponent;
@@ -8,7 +13,16 @@ describe('AnimeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AnimeComponent]
+      imports: [
+        BrowserAnimationsModule,
+        MaterialModule,
+        HttpClientModule,
+        FormsModule
+      ],
+      declarations: [
+        AnimeComponent,
+        ImageViewComponent,
+      ]
     });
     fixture = TestBed.createComponent(AnimeComponent);
     component = fixture.componentInstance;
