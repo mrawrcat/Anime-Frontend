@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { InputComponent } from './input/input.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -24,7 +23,6 @@ describe('AppComponent', () => {
     declarations: [
       AppComponent,
       ImageViewComponent,
-      InputComponent,
     ]
   }));
 

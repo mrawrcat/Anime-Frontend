@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { InputComponent } from './input/input.component';
-
 import { ImageViewComponent } from './image-view/image-view.component';
 
 import { FormsModule } from '@angular/forms';
@@ -21,7 +19,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent,
     ImageViewComponent,
     AnimeDetailComponent,
     AnimeComponent,

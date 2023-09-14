@@ -30,4 +30,17 @@ describe('ImageViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should correctly display img src and alt', () => {
+    const imgSRC = "https://cdn.myanimelist.net/images/anime/13/17405.jpg";
+    const imgAlt = "Naruto"
+    
+    component.imageSrc = imgSRC;
+    component.imageAlt = imgAlt;
+    fixture.detectChanges();
+    const imgElement: HTMLImageElement = fixture.nativeElement.querySelector('img');
+    expect(imgElement.src).toBe(imgSRC);
+    expect(imgElement.alt).toBe(imgAlt);
+  });
+
 });

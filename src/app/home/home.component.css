@@ -2,6 +2,7 @@
     width: 300px;
     height: 400px;
     display: flexbox;
+    margin: 5px;
 }
 
 div {
@@ -17,8 +18,8 @@ div {
     /* padding-left: 50px; */
     justify-content: center;
     margin: auto;
-    display: flex;
-    word-wrap: break-word;
+    /* display: flex; */
+    /* word-wrap: break-word; */
 }
 
 .enter-input {
@@ -31,4 +32,17 @@ div {
 p {
     padding: 5px;
     word-wrap: break-word;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.title-text {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.second-row-form{
+    justify-content: center;
 }
